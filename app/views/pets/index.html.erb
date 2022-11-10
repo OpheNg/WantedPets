@@ -1,0 +1,26 @@
+<div class="allpets">
+  <% @pets.each do |pet| %>
+    <div class="pet-card">
+      <ul>
+        <li><%= pet.name %></li>
+        <li><%= pet.specie %></li>
+        <li><%= pet.breed %></li>
+        <li><%= pet.color %></li>
+        <li><%= pet.age %></li>
+        <li><%= pet.lost_address %></li>
+        <li><%= pet.owner %></li>
+        <li><%= pet.email %></li>
+        <li><%= pet.tel %></li>
+        <li><%= pet.description%></li>
+      </ul>
+      <% if pet.user == current_user %>
+        <%= link_to "Edit", edit_pet_path %>
+        <%= link_to "destroy", destroy_pet_path %>
+      <% end %>
+    </div>
+  <% end %>
+
+<%= link_to "create a post", new_pet_path %>
+<%#
+#dans le create mettre input validate Option, et definir option select %>
+</div>
