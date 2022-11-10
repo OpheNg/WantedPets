@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  OPTIONS = [['Found', 'found'], ['Lost', 'lost']]
+  OPTIONS = ['Found', 'Lost']
 
 validates_inclusion_of :status, :in => OPTIONS
 end

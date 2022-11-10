@@ -2,6 +2,7 @@
   <% @pets.each do |pet| %>
     <div class="pet-card">
       <ul>
+        <li><%= pet.status %></li>
         <li><%= pet.name %></li>
         <li><%= pet.specie %></li>
         <li><%= pet.breed %></li>
@@ -13,9 +14,9 @@
         <li><%= pet.tel %></li>
         <li><%= pet.description%></li>
       </ul>
-      <% if pet.user == current_user %>
-        <%= link_to "Edit", edit_pet_path %>
-        <%= link_to "destroy", destroy_pet_path %>
+      <% if pet.user_id == current_user.id %>
+        <%= link_to "Edit", edit_pet_path(pet.id) %>
+        <%= link_to "destroy", pet_path(pet.id), method: :delete %>
       <% end %>
     </div>
   <% end %>
