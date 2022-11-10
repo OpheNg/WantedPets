@@ -7,6 +7,7 @@ class PetsController < ApplicationController
   def show
     @user = current_user
     @pet = Pet.find(params[:id])
+    @pets = Pet.all
   end
 
   def new
@@ -19,6 +20,11 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user_id = current_user.id
     redirect_to pets_path if @pet.save
+  end
+
+  def edit
+    @user = current_user
+    @pet = Pet.find(params[:id])
   end
 
   def update
