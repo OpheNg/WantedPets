@@ -1,0 +1,14 @@
+.pet-card{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 12px;
+  max-width:500px;
+
+
+}
+.allpets{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
