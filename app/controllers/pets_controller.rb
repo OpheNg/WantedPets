@@ -54,10 +54,10 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:event_date,:email,:tel,:owner,:description,:user_id, :status)
+    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:event_date,:email,:tel,:owner,:user_id, :status)
   end
 
   def pet_params_update
-    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:event_date,:email,:tel,:owner,:description, :status)
+    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:event_date,:email,:tel,:owner, :status)
   end
 end
