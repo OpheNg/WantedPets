@@ -2,6 +2,12 @@ class PetsController < ApplicationController
   def index
     @user = current_user
     @pets = Pet.all
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
@@ -47,10 +53,10 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:lost_address,:find_address,:email,:tel,:owner,:description,:user_id, :status)
+    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:email,:tel,:owner,:description,:user_id, :status)
   end
 
   def pet_params_update
-    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:lost_address,:find_address,:email,:tel,:owner,:description, :status)
+    params.require(:pet).permit(:name,:specie,:color,:breed,:age,:address,:email,:tel,:owner,:description, :status)
   end
 end

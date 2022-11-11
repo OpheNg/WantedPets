@@ -1,27 +1,34 @@
-<div class="allpets">
-  <% @pets.each do |pet| %>
-    <div class="pet-card">
-      <ul>
-        <li><%= pet.status %></li>
-        <li><%= pet.name %></li>
-        <li><%= pet.specie %></li>
-        <li><%= pet.breed %></li>
-        <li><%= pet.color %></li>
-        <li><%= pet.age %></li>
-        <li><%= pet.lost_address %></li>
-        <li><%= pet.owner %></li>
-        <li><%= pet.email %></li>
-        <li><%= pet.tel %></li>
-        <li><%= pet.description%></li>
-      </ul>
-      <% if pet.user_id == current_user.id %>
-        <%= link_to "Edit", edit_pet_path(pet.id) %>
-        <%= link_to "destroy", pet_path(pet.id), method: :delete %>
-      <% end %>
-    </div>
-  <% end %>
-
 <%= link_to "create a post", new_pet_path %>
-<%#
-#dans le create mettre input validate Option, et definir option select %>
+
+<div class="indexpets">
+  <div class="allpets">
+      <% @pets.each do |pet| %>
+        <div class="pet-card">
+          <ul>
+            <li><%= pet.status %></li>
+            <li><%= pet.name %></li>
+            <li><%= pet.specie %></li>
+            <li><%= pet.breed %></li>
+            <li><%= pet.color %></li>
+            <li><%= pet.age %></li>
+            <li><%= pet.address %></li>
+            <li><%= pet.owner %></li>
+            <li><%= pet.email %></li>
+            <li><%= pet.tel %></li>
+            <li><%= pet.description%></li>
+          </ul>
+          <% if pet.user_id == current_user.id %>
+            <%= link_to "Edit", edit_pet_path(pet.id) %>
+            <%= link_to "destroy", pet_path(pet.id), method: :delete %>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
+  <div class="petmap">
+
+
+  </div>
+
 </div>

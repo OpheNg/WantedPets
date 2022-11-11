@@ -7,7 +7,7 @@
         <li><%= @pet.breed %></li>
         <li><%= @pet.color %></li>
         <li><%= @pet.age %></li>
-        <li><%= @pet.lost_address %></li>
+        <li><%= @pet.address %></li>
         <li><%= @pet.owner %></li>
         <li><%= @pet.email %></li>
         <li><%= @pet.tel %></li>
@@ -18,6 +18,6 @@
         <%= link_to "destroy", pet_path(@pet.id), method: :delete %>
       <% end %>
     </div>
-  
+
 
 <%= link_to "back", pets_path %>
