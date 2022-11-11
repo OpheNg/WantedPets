@@ -1,10 +1,10 @@
-class ChangeDescriptionToBeTextAreaInPets < ActiveRecord::Migration[6.1]
+class ChangeDescriptionToBeTextInPets < ActiveRecord::Migration[6.1]
   def change
-    change_column :pets, :description, :text_area
+    change_column :pets, :description, :text
   end
 
   def up
-    change_column :pets, :description, :text_area
+    change_column :pets, :description, :text
   end
 
   def down
