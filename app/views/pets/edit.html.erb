@@ -1,7 +1,7 @@
 <div class="editpet">
 
   <%= simple_form_for @pet do |f| %>
-    <%#= f.select :status, Pet::OPTIONS %>
+    <%= f.select :situation, Pet::OPTIONS %>
     <%#= f.input :status, placeholder:"Lost or Found" %>
     <%= f.input :event_date %>
     <%= f.input :name %>
