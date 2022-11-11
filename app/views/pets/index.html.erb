@@ -12,6 +12,7 @@
             <li><%= pet.color %></li>
             <li><%= pet.age %></li>
             <li><%= pet.address %></li>
+            <li><%= pet.event_date %></li>
             <li><%= pet.owner %></li>
             <li><%= pet.email %></li>
             <li><%= pet.tel %></li>
@@ -19,7 +20,7 @@
           </ul>
           <% if pet.user_id == current_user.id %>
             <%= link_to "Edit", edit_pet_path(pet.id) %>
-            <%= link_to "destroy", pet_path(pet.id), method: :delete %>
+            <%= link_to "destroy", pet_path(pet.id), method: :delete, data: {confirm: 'Are you sure you wanna delete this post ?'} %>
           <% end %>
         </div>
       <% end %>
@@ -27,7 +28,10 @@
     </div>
 
   <div class="petmap">
-
+    <div style="width: 100%; height: 600px;"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   </div>
 
